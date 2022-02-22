@@ -5,7 +5,7 @@ function printDate(){
 }
 function printMonth(){
     let mon =  new Date()
-    let month = mon.getMonth() + 1
+    let month = mon.toLocaleString("en-Us",{month: "long"})
     console.log(`current date is ==> ${month}`)
   }
   function getBatchInfo(){
