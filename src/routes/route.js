@@ -1,10 +1,31 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/students/:name', function(req, res) {
-    let studentName = req.params.name
-    console.log(studentName)
-    res.send(studentName)
+router.get('/students/:id', function(req, res) {
+    let studentId = req.params.id
+    console.log(studentId)
+
+   let movieDetail =  [ {
+        "id": 1,
+        "name": "The Shining"
+       }, {
+        "id": 2,
+        "name": "Incendies"
+       }, {
+        "id": 3,
+        "name": "Rang de Basanti"
+       }, {
+        "id": 4,
+        "name": "Finding Demo"
+       }]
+
+      for(let i = 0; i<movieDetail.length; i++){
+        if( movieDetail[i].id == studentId){
+            console.log(movieDetail[i])
+            res.send(movieDetail[i])
+
+        }
+      }
 })
 
 
