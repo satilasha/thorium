@@ -1,10 +1,12 @@
 function printDate(){
-  const date1 = new Date();
-  console.log(date1);
+  let num = new Date();
+  let date = num.getDate()
+  console.log(`current date is ==> ${date}`);
 }
-function printMonth(m){
-    let n =  new Date(m)
-    console.log(n.getMonth())
+function printMonth(){
+    let mon =  new Date()
+    let month = mon.getMonth() + 1
+    console.log(`current date is ==> ${month}`)
   }
   function getBatchInfo(){
     let a =   "Thorium, W3D1, the topic for today is Nodejs module system"
