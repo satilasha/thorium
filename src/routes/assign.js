@@ -1,7 +1,3 @@
-const express = require('express');
-const router = express.Router();
-
-
 let players =  [
     {
         "name": "manish",
@@ -50,46 +46,31 @@ let players =  [
         "sports": [
             "soccer"
         ],
-        "bookings": []
+        "bookings": [1,2]
     },
 ]
 
-router.post("/player", function(req, res) {
-    let ele = req.body.name
-    const index = players.findIndex(object => object.name === ele)
-       if(index === -1){
-      players.push(req.body)
-        }
-        else{
-            res.send("player exists")
-        }
-    res.send(  { players }  )
-       
-})
 
-router.post("/players/:playerName/bookings/:bookingId", function(req, res) {
-    let play = req.params.playerName
-    let book =req.params.bookingId
     
-    const index = players.findIndex(object => object.name === play)
+    let pname = "manish"
+    let bookingNumber = 4
+    const index = players.findIndex(object => object.name === pname)
     if(index === -1){
-        res.send('player does not exists')   
+        console.log('playerdoesnotexists')
     }
-
     else{
     let a = players[index].bookings
-    const i = a.findIndex(object => object.bookingNumber == book)
-        if(i === -1 ){
-            a.push(req.body)
-            res.send(  players[index] )
+    const i = a.findIndex(object => object.bookingNumber === bookingNumber)
+    console.log(i)
+        if(i === -1){
+            a.push(bookingNumber)
+           
+            console.log(players[index])
            
         }
         else{
-            res.send("booking exists")
+            console.log("booking exists")
         }
     }
 
-       
-})
 
-module.exports = router;
