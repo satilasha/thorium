@@ -42,13 +42,16 @@ let persons= [
 
 router.post("/person", function(req, res) {
     let VotingAge = req.query.VotingAge
+    let adults =[]
     for(i = 0;i<persons.length;i++){
         if(persons[i].age>=VotingAge){
             persons[i].votingStatus = true
+           adults.push(persons[i])
         }
+     
     }
    
-    res.send(  { persons }  )
+    res.send(  {result : adults}  )
 })
 
 
