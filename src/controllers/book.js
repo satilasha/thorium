@@ -2,7 +2,10 @@ let a = {
     "bookName": "Shiva Trilogy",
     "authorName": "Amish Tripathi",
     "category": "Fantasy/Fiction",
-    "year": 2010
+    "year": 2010,
+    "pages" : 76,
+    "INR": 98,
+    "inStock": true
 }
 
 let b = {
@@ -24,4 +27,13 @@ let d = {
     "authorName": "Murakami",
     "category": "Short Stories",
     "year": 2014
+}
+let e = {
+    "bookName": "His Dark Materials",
+    "authorName": "Philip Pullman",
+    "category": "Fiction",
+    "year": 2008,
+    "pages" : 392,
+    "INR": 599,
+    "inStock": true
 }
