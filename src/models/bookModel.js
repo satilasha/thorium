@@ -11,7 +11,10 @@ const bookSchema = new mongoose.Schema({
     },
     category: String,
     year: Number,
-    INR: Number,
+    price :{
+        euro : Number,
+        INR: Number
+    },
     pages: Number,
     inStock : Boolean
 }, { timestamps: true });
