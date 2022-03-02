@@ -6,11 +6,11 @@ const publisherModel= require("../models/publisherModel")
 const createBook= async function (req, res) {
     let book = req.body
     if(book.author_id){
-        let validAuthor = await authorModel.findOne({_id:book.author_id})
-       if(book.author_id == validAuthor._id){
+        let validAuthor = await authorModel.findOne({ _id:book.author_id})
+       if(validAuthor && book.author_id == validAuthor._id){
            if(book.publisher_id){
             let validPublisher = await publisherModel.findOne({_id:book.publisher_id})
-               if(book.publisher_id == validPublisher._id){
+               if(validPublisher && book.publisher_id == validPublisher._id){
                 let bookCreated = await bookModel.create(book)
                 res.send({data: bookCreated})
 
