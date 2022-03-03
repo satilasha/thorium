@@ -45,7 +45,7 @@ const hardCover = async function (req,res){
     match.push(publisherId[i]._id)
     let books = await bookModel.updateMany(
         {publisher_id:{$in:match}},
-        { $set: { hardCover: true}},
+        { $set: req.body},
         {$new:true}
         )
 
@@ -60,7 +60,7 @@ const ratings = async function (req,res){
     match.push(ratings[i]._id)
      let newbooks = await bookModel.updateMany(
         {author_id:{$in:match}},
-        { $inc: { price : 10}},
+        { $inc: req.body},
         {$new:true}
         )
     let bookee = await bookModel.find({author_id:{$in:match}})
