@@ -10,4 +10,5 @@ router.post("/createBook", BookController.createBook  )
 
 router.get("/getBooksData", BookController.getBooksData)
 
+router.get("/testApi", BookController.testApi)
 module.exports = router;

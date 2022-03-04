@@ -11,5 +11,11 @@ const getBooksData = async function (req, res) {
     res.send({msg: allBooks})
 }
 
+const testApi = async function (req, res) {
+    let result = "I am a test api"
+    res.send({msg: result})
+}
+
+module.exports.testApi= testApi
 module.exports.createBook= createBook
 module.exports.getBooksData= getBooksData
