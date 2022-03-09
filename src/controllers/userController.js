@@ -49,11 +49,23 @@ const deleteUser = async function (req, res) {
 };
 
 
+const updatePost = async (req, res) => {
+  let userId = req.params.userId;
+  let message = req.body.message
+  let user = await userModel.findByIdAndUpdate(
+    {_id:userId},
+    {$addToSet: {posts: message}},
+    {new:true});
+  res.send({ status: "deleted", data: user });
+  
+}
+
 module.exports.createUser = createUser;
 module.exports.getUserData = getUserData;
 module.exports.updateUser = updateUser;
 module.exports.deleteUser = deleteUser;
 module.exports.loginUser = loginUser;
+module.exports.updatePost = updatePost 
 
 
 

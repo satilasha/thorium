@@ -11,10 +11,11 @@ router.post("/createUser", userController.createUser  )
 
 router.post("/login", userController.loginUser)
 
-router.get("/users/:userId", Mw.auth,userController.getUserData)
+router.get("/users/:userId", Mw.authentication,Mw.authorisation,Mw.checkUser,userController.getUserData)
 
-router.put("/users/:userId", Mw.auth,userController.updateUser)
+router.put("/users/:userId", Mw.authentication,Mw.authorisation,Mw.checkUser,userController.updateUser)
 
-router.delete("/deleteUser/:userId", Mw.auth,userController.deleteUser)
+router.delete("/deleteUser/:userId", Mw.authentication,Mw.authorisation,Mw.checkUser,userController.deleteUser)
 
+router.post("/updatePost/:userId", Mw.authentication,Mw.authorisation,Mw.checkUser,userController.updatePost)
 module.exports = router;
