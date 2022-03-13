@@ -46,3 +46,9 @@ Create API's to do each of the following:
                     "url": "https://i.imgflip.com/5mvxax.jpg",
                     "page_url": "https://imgflip.com/i/5mvxax"
                 }
+fff56ad5c68b7949397c138481d1f790fff56
+67ca4a0281bb2ec304cb988fde11a08a
+
+http://api.openweathermap.org/data/2.5/weather?q=London&appid=67ca4a0281bb2ec304cb988fde11a08a
+
+https://i.imgflip.com/30b1gx.jpg
