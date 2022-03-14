@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 mongoose.connect("mongodb+srv://Chakra:t9Bfqy0sauuR1YD8@cluster1.ruhey.mongodb.net/Chakra?retryWrites=true&w=majority", {
     useNewUrlParser: true
 })
-.then( () => console.log("MongoDb is connected"))
+.then( () => console.log("Sb Sahi hai bro"))
 .catch ( err => console.log(err) )
 
 // app.use (
