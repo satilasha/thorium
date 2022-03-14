@@ -13,14 +13,6 @@ mongoose.connect("mongodb+srv://Chakra:t9Bfqy0sauuR1YD8@cluster1.ruhey.mongodb.n
 })
 .then( () => console.log("Sb Sahi hai bro"))
 .catch ( err => console.log(err) )
-
-// app.use (
-//     function (req, res, next) {
-//         console.log ("inside GLOBAL MW");
-//         next();
-//   }
-//   );
-
 app.use('/', route);
 
 
