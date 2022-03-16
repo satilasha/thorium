@@ -1,23 +1,25 @@
 const mongoose = require("mongoose");
-const authors = require('./authorModel')
 let ObjectId = mongoose.Schema.Types.ObjectId;
+
 
 const blogSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true,
+      trim: true,
+      required: [true, "Please enter a title"],
     },
 
     body: {
       type: String,
-      required: true,
+      trim: true,
+      required: [true, "Please enter body"],
     },
 
     authorId: {
       type: ObjectId,
-      ref: authors,
-      required: true,
+      ref: "Author",
+      required: [true, "Please enter author Id"],
     },
 
     tags: {
@@ -26,7 +28,8 @@ const blogSchema = new mongoose.Schema(
 
     category: {
       type: String,
-      required: true,
+      trim: true,
+      required: [true, "Please enter a category"],
     },
 
     subCategory: {
@@ -49,4 +52,4 @@ const blogSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Blogs", blogSchema);
+module.exports = mongoose.model("Blog", blogSchema);
