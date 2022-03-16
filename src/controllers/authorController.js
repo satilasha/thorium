@@ -9,7 +9,7 @@ const createAuthor = async function (req, res) {
             return res.status(400).send({ status: false, msg: "No data to create author" })
 
         let duplicateEmail = await BlogModel.findOne({ email: data.email })
-        if (duplicateEmail)
+        if (Object.keys(duplicateEmail).length != 0)
             return res.status(400).send({ status: false, msg: "email is already present" })
 
         let savedData = await AuthorModel.create(data)
